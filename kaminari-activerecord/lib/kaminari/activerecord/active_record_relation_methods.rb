@@ -85,7 +85,7 @@ module Kaminari
     end
 
     # Force to raise an exception if #total_count is called explicitly.
-    def total_count
+    def total_count(*args)
       raise "This scope is marked as a non-count paginable scope and can't be used in combination " \
             "with `#paginate' or `#page_entries_info'. Use #link_to_next_page or #link_to_previous_page instead."
     end
