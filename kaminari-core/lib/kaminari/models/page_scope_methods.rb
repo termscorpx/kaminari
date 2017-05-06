@@ -30,8 +30,8 @@ module Kaminari
     end
 
     # Total number of pages
-    def total_pages
-      count_without_padding = total_count
+    def total_pages(*args)
+      count_without_padding = total_count(*args)
       count_without_padding -= @_padding if defined?(@_padding) && @_padding
       count_without_padding = 0 if count_without_padding < 0
 
@@ -68,8 +68,8 @@ module Kaminari
     end
 
     # Last page of the collection?
-    def last_page?
-      current_page == total_pages
+    def last_page?(*args)
+      current_page == total_pages(*args)
     end
 
     # Out of range of the collection?
